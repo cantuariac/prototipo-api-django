@@ -15,8 +15,7 @@ class HelloView(views.APIView):
 
     def get(self, request):
         content = {
-            'ok': True,
-            'url': 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'
+            'data': 'Este texto veio de uma API feita em Django'
         }
         return Response(content)
 
