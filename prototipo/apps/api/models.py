@@ -13,6 +13,12 @@ class Profile(models.Model):
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, 
                                 verbose_name='Usuário', 
                                 on_delete=models.CASCADE)
+
+    nome = models.CharField(_("Nome"), max_length=50)
+    sobrenome = models.CharField(_("Sobrenome"), max_length=50)
+    admissao = models.DateField(
+        _("Data de admissão"), auto_now=False, auto_now_add=False)
+    
     extrainfo = models.UUIDField(default=uuid.uuid4, auto_created=True)
 
     objects = models.manager.Manager()
@@ -28,7 +34,7 @@ class Registro(models.Model):
                                 verbose_name='Usuário', 
                                 on_delete=models.CASCADE)
     descricao = models.CharField(_("Descrição"), max_length=200)
-    timestamp = models.DateTimeField(_("Data de criação"), auto_now_add=True)
+    timestamp:models.DateTimeField = models.DateTimeField(_("Data de criação"), auto_now_add=True)
 
     objects = models.manager.Manager()
 
@@ -37,6 +43,6 @@ class Registro(models.Model):
         verbose_name_plural = _("registros")
     
     def __str__(self):
-        return self.timestamp
+        return str(self.timestamp)
 
 
