@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'prototipo.apps.api',
+    'apps.api',
     'apps.endereco',
 
     'rest_framework',
