@@ -1,5 +1,5 @@
 # from apps.api.models import Registro
-from prototipo.apps.api.models import Profile, Registro
+from apps.api.models import Profile, Registro
 from django.contrib.auth import get_user_model
 from faker import Faker
 import random

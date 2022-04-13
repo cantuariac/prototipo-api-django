@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'apps.endereco',
 
     'rest_framework',
-    'rest_framework.authtoken',
+    # 'rest_framework.authtoken',
+    
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -86,8 +88,8 @@ DATABASES = {
         'NAME': 'prototipo_api_db',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '192.168.1.2',
-        #'HOST': 'localhost',
+        #'HOST': '192.168.1.2',
+        'HOST': 'localhost',
         'PORT': '5432',
     },
     'sqlite': {
@@ -143,8 +145,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.TokenAuthentication",
+        # "rest_framework.authentication.TokenAuthentication",
         "rest_framework.authentication.SessionAuthentication",
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
