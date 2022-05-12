@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from prototipo.apps.api import urls as api_urls
+from apps.api import urls as api_urls
 
 
 urlpatterns = [

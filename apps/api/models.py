@@ -46,3 +46,6 @@ class Registro(models.Model):
         return str(self.timestamp)
 
 
+
+
+
